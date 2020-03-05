@@ -15,12 +15,6 @@ public class ApplicationManager {
     AppiumDriver driver;
     ArticleHelper article;
 
-
-
-
-
-
-
     public void init() throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
 
@@ -30,11 +24,13 @@ public class ApplicationManager {
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "org.wikipedia");
         cap.setCapability("appActivity", ".main.MainActivity");
-        cap.setCapability("app", "C:/Users/strit/Documents/GitHub/wikipedia/src/test/resources/apk/org.wikipedia.apk");
+        cap.setCapability("app", "C:/Users/Elena/Dropbox/Tel-ran/Mobile/apk/org.wikipedia.apk");
 
         driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         article = new ArticleHelper(driver);
+
+
 
 
     }
